@@ -83,6 +83,7 @@ BinarySearchTree.prototype.depthFirstForEach = function(fn,order){
 };
 
 BinarySearchTree.prototype.breadthFirstForEach = function(fn,array=[]){
+    fn(this.value)
  
     if(this.left) {
       array.push(this.left)
@@ -90,8 +91,8 @@ BinarySearchTree.prototype.breadthFirstForEach = function(fn,array=[]){
     if (this.right){
       array.push(this.right)
     }
-    fn(this.value)
-    if (array.length > 0){
+    
+    if (array.length){
       array.shift().breadthFirstForEach(fn,array)
     }
 };
